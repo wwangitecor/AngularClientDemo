@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ItemDisplayModule } from './item-display/item-display.module';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http'
 
 
 
@@ -14,7 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     ItemDisplayModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

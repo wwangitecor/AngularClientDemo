@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemService } from '../services/item.service';
 
 export interface PeriodicElement {
   name: string;
@@ -29,9 +30,16 @@ export class ItemDisplayComponent implements OnInit {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
-  constructor() { }
+  constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
+    this.getItems();
+  }
+
+  getItems() {
+    this.itemService.getItems().subscribe(resp => {
+      console.log(resp);
+    })
   }
 
 }
