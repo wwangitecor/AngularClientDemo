@@ -7,7 +7,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
   providedIn: 'root'
 })
 export class ItemService extends BaseService {
-
   constructor(private http: HttpClient) {
     super();
   }
@@ -19,7 +18,7 @@ export class ItemService extends BaseService {
       }),
       observe: 'response',
       params: itemParameter
-    })
+    });
   }
 
 }
